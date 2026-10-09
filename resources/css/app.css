@@ -1,11 +1,364 @@
-@import 'tailwindcss';
+/*  General Reset  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Tahoma", sans-serif;
+}
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+/*  Navbar  */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0d6efd;
+    padding: 15px 30px;
+    color: #fff;
+    flex-wrap: wrap;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+
+}
+
+.nav-links li a:hover {
+    text-decoration: underline;
+}
+
+/*  Hero Section  */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 30px;
+    background: linear-gradient(to right, #0d6efd, #6610f2);
+    color: #fff;
+}
+
+.hero-text {
+    flex: 1 1 400px;
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    padding: 12px 25px;
+    margin-right: 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    opacity: 0.9;
+}
+
+.hero button.secondary {
+    background-color: #fff;
+    color: #0d6efd;
+}
+
+.hero button:first-child {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.hero-image {
+    flex: 1 1 300px;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/*  Features  */
+.features {
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.feature-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.feature-boxes .box {
+    background-color: #fff;
+    flex: 1 1 200px;
+    max-width: 250px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.feature-boxes .box:hover {
+    transform: translateY(-5px);
+}
+
+/*  Screenshots  */
+.screenshots {
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.screenshots h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.screenshot-container,
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.screenshot-container img,
+.images img {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+/*  Testimonials  */
+.testimonials {
+    padding: 60px 30px;
+    background-color: #e9ecef;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.testimonial {
+    background-color: #fff;
+    padding: 25px;
+    margin: 10px auto;
+    border-radius: 10px;
+    max-width: 500px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+/*  FAQ  */
+.faq {
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.faq h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.faq-item {
+    background-color: #fff;
+    padding: 20px;
+    margin: 15px auto;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    text-align: right;
+}
+
+/*  Forms  */
+form {
+    background-color: #fff;
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 700px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/*  Tables  */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    max-width: 1000px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #0d6efd;
+    color: #fff;
+    font-weight: 600;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+button {
+    padding: 8px 15px;
+    margin: 2px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:first-of-type {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+button:last-of-type {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/*  Page Header  */
+.page-header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+}
+
+/*  Payslip  */
+.payslip-box {
+    background-color: #fff;
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    text-align: right;
+}
+
+.payslip-box table {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.payslip-box table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/*  Footer  */
+.footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #0d6efd;
+    color: #fff;
+    margin-top: 50px;
+}
+
+/*  Responsive  */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        margin-bottom: 30px;
+    }
+
+    .feature-boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .screenshot-container,
+    .images {
+        flex-direction: column;
+        align-items: center;
+    }
 }
